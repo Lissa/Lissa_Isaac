@@ -1,0 +1,18 @@
+<%#
+    local variables:
+        cart -> cart to be displayed
+%>
+    <h3><%= message %></h3>
+    <ul>
+         <% cart.line_items.each do |line_item| %>
+            <li>
+              <%= line_item.smart.name %>
+              |
+              <%= line_item.smart.price %>
+            </li>
+            <% end %>
+    </ul>
+
+    <div>
+      Total = $ <%= cart.total_amount %>
+    </div>
